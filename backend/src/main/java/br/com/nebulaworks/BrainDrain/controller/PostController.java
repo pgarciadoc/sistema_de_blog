@@ -1,7 +1,7 @@
 package src.main.java.br.com.nebulaworks.BrainDrain.controller;
 
-import br.com.nebulaworks.BrainDrain.model.Post;
-import br.com.nebulaworks.BrainDrain.service.NotionService;
+import src.main.java.br.com.nebulaworks.BrainDrain.model.Post;
+import src.main.java.br.com.nebulaworks.BrainDrain.service.NotionService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
