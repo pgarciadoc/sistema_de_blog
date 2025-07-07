@@ -1,4 +1,4 @@
-package br.com.nebulaworks.BrainDrain.controller;
+package src.main.java.br.com.nebulaworks.BrainDrain.controller;
 
 import br.com.nebulaworks.BrainDrain.model.Post;
 import br.com.nebulaworks.BrainDrain.service.NotionService;

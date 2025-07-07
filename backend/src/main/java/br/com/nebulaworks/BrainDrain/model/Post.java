@@ -1,4 +1,4 @@
-package br.com.nebulaworks.BrainDrain.model;
+package src.main.java.br.com.nebulaworks.BrainDrain.model;
 
 import java.time.LocalDate;
 import java.util.List;

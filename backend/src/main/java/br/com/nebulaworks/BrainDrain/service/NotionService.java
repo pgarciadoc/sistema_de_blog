@@ -1,7 +1,7 @@
-package br.com.nebulaworks.BrainDrain.service;
+package src.main.java.br.com.nebulaworks.BrainDrain.service;
 
-import br.com.nebulaworks.BrainDrain.dto.NotionPage;
-import br.com.nebulaworks.BrainDrain.dto.NotionResponse;
+import src.main.java.br.com.nebulaworks.BrainDrain.dto.NotionPage;
+import src.main.java.br.com.nebulaworks.BrainDrain.dto.NotionResponse;
 import br.com.nebulaworks.BrainDrain.model.Post;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

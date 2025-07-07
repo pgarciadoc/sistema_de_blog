@@ -1,4 +1,4 @@
-package br.com.nebulaworks.BrainDrain.dto;
+package src.main.java.br.com.nebulaworks.BrainDrain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
