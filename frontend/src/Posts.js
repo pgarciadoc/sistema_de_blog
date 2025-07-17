@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import Header from "./menu/Header";
+
 
 function Posts() {
     const [posts, setPosts] = useState([]);
@@ -18,6 +20,8 @@ function Posts() {
     }, []);
 
     return (
+      <>
+        <Header />
         <div style={styles.all_content}>
             <h1>Artigos do Blog</h1>
             {posts.map((post, index) => (
@@ -32,6 +36,7 @@ function Posts() {
                 </div>
             ))}
         </div>
+      </>
     );
 }
 

@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import './index.css';
+import Header from "./menu/Header";
 
 function PostPage() {
     const {id} = useParams();
@@ -21,7 +23,9 @@ function PostPage() {
     }
 
     return (
-        <div style={styles.container}>
+        <>
+          <Header />
+          <div style={styles.container}>
             <h1>{post.titulo}</h1>
             <p><strong>Data:</strong> {formatarData(post.data)}</p>
             <p><strong>Criado por:</strong> {post.criadoPor}</p>
@@ -29,7 +33,9 @@ function PostPage() {
 
             <div style={styles.content} dangerouslySetInnerHTML={{ __html: post.conteudo}} />
 
-        </div>
+          </div>
+        </>
+
     );
 
 }
