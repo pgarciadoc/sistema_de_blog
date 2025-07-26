@@ -12,6 +12,7 @@ public class Post {
     private String editadoPor;
     private String url;
     private String conteudo;
+    private String slug;
 
     public String getId() {
         return id;
@@ -67,5 +68,13 @@ public class Post {
 
     public void setConteudo(String conteudo) {
         this.conteudo = conteudo;
+    }
+
+    public String getSlug() {
+        return slug;
+    }
+
+    public void setSlug(String slug) {
+        this.slug = slug;
     }
 }

@@ -45,8 +45,8 @@ public class NotionService {
         try{
             NotionResponse response = mapper.readValue(responseBody, NotionResponse.class);
             for (NotionPage page: response.getResults()) {
-                String id = page.getId();
-                String conteudo = getPageContent(id);
+                String pageId = page.getId();
+                String conteudo = getPageContent(pageId);
 
                 Map<String, Object> props = page.getProperties();
 
@@ -76,7 +76,22 @@ public class NotionService {
                 // Criar o objeto Post
                 Post post = new Post();
 
-                post.setId(id);
+                // URL personalizada SLUG
+                Map<String, Object> slugProperty = (Map<String, Object>) props.get("Slug");
+
+                if (slugProperty != null && slugProperty.containsKey("rich_text")) {
+                    List<Map<String, Object>> richTextList = (List<Map<String, Object>>) slugProperty.get("rich_text");
+
+                    if (!richTextList.isEmpty()) {
+                        Map<String, Object> richText = richTextList.get(0);
+                        Map<String, Object> slugText = (Map<String, Object>) richText.get("text");
+                        String slug = (String) slugText.get("content");
+                        post.setSlug(slug);
+                    }
+                }
+
+
+                post.setSlug(post.getSlug());
                 post.setTitulo(titulo);
                 post.setData(data);
                 post.setCriadoPor(criadoPor);
@@ -94,10 +109,10 @@ public class NotionService {
         return posts;
     }
 
-    public static Post getPostById(String id) {
+    public static Post getPostBySlug(String slug) {
         List<Post> posts = getPost();
         return posts.stream()
-                .filter(post -> post.getId().equals(id))
+                .filter(post -> post.getSlug().equals(slug))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Post não encontrado"));
     }

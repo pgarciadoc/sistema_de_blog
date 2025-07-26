@@ -5,18 +5,18 @@ import './index.css';
 import Header from "./menu/Header";
 
 function PostPage() {
-    const {id} = useParams();
+    const {slug} = useParams();
     const [post, setPost] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/posts/${id}`)
+        axios.get(`http://localhost:8080/posts/${slug}`)
         .then(Response => {
             setPost(Response.data);
         })
         .catch(error => {
             console.error('Erro ao buscar o post', error);
         });
-    }, [id]);
+    }, [slug]);
 
     if (!post) {
         return <div>Carregando...</div>

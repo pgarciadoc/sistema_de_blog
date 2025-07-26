@@ -30,7 +30,7 @@ function Posts() {
                     <p><strong>Data:</strong> {formatarData(post.data)}</p>
                     <p><strong>Criado por:</strong> {post.criadoPor}</p>
                     <p><strong>Editado por:</strong> {post.editadoPor}</p>
-                    <Link to={`/post/${post.id}`} style={styles.button}>Ler Mais</Link>
+                    <Link to={`/post/${post.slug}`} style={styles.button}>Ler Mais</Link>
                     <hr />
                 
                 </div>

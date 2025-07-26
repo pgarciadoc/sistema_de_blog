@@ -22,8 +22,9 @@ public class PostController {
         return NotionService.getPost();
     }
 
-    @GetMapping("/{id}")
-    public Post getPostById(@PathVariable String id) {
-        return NotionService.getPostById(id);
+    @GetMapping("/{slug}")
+    public Post getPostBySlug(@PathVariable String slug) {
+        return NotionService.getPostBySlug(slug);
     }
+
 }

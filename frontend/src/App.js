@@ -5,6 +5,7 @@ import PostPage from './PostPage';
 import './menu/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import Blog from './pages/blog';
 
 
 
@@ -13,7 +14,7 @@ function App() {
    <Router>
       <Routes>
         <Route path='/' element={<Posts />} />
-        <Route path='/post/:id' element={<PostPage />} />
+        <Route path='/post/:slug' element={<Blog />} />
       </Routes>
    </Router>
   );
