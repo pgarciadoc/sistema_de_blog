@@ -11,7 +11,9 @@ function Blog() {
         console.log(res.data);
         setPosts(res.data);
       })
-      .catch(err => console.error(err));
+      .catch(err => {
+  console.error("ERRO COMPLETO:", err);
+});
   }, []);
 
   return (
